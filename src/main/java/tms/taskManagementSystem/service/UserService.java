@@ -1,4 +1,4 @@
 package tms.taskManagementSystem.service;
 
-public class service {
+public interface UserService {
 }
