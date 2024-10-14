@@ -3,7 +3,9 @@ package tms.taskManagementSystem.service.impl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import tms.taskManagementSystem.dto.UserDto;
 import tms.taskManagementSystem.entity.User;
+import tms.taskManagementSystem.mapper.UserMapper;
 import tms.taskManagementSystem.repository.UserRepository;
 import tms.taskManagementSystem.service.UserService;
 
@@ -15,12 +17,13 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public ResponseEntity<User> saveUser(User user) {
-        return null;
+    public User saveUser(UserDto userDto) {
+        User user = UserMapper.mapToUser(userDto);
+        return user;
     }
 
     @Override
-    public ResponseEntity<User> modifyUser(Long id) {
+    public ResponseEntity<User> modifyUser(Long id, UserDto userDto) {
         return null;
     }
 
