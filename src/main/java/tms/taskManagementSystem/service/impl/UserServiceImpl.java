@@ -17,13 +17,15 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public User saveUser(UserDto userDto) {
+    public UserDto saveUser(UserDto userDto) {
         User user = UserMapper.mapToUser(userDto);
-        return user;
+        User savedUser = userRepository.save(user);
+        return UserMapper.mapToUserDto(savedUser);
     }
 
     @Override
     public ResponseEntity<User> modifyUser(Long id, UserDto userDto) {
+        //User user =
         return null;
     }
 
